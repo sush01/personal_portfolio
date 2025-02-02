@@ -54,32 +54,52 @@
           organization as a dedicated trainee or junior software developer.</p>
 
           <div class="tab-titles">
-            <p class="tab-links active-link">Education</p>
-            <p class="tab-links">Skills</p>
-            <p class="tab-links">Experience</p>
+            <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+            <p class="tab-links" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
           </div>
-          <div class="tab-contents">
+          <div class="tab-contents active-tab" id="education">
+            <ul>
+              <li><span> Bachelors Degree, 2011-2015</span><br> Information Technology </li>
+              <li><span> Coding Training, 2024</span><br> C, Python and emmbedded programming using Raspberry Pi</li>
+              <li><span> Web Developement Training, 2024</span><br> Website development using Wordpress and Elementor Pro</li>  
+  
+            </ul>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
             <ul>
               <li><span> UI/UX </span><br> Designing Web/App interfaces</li>
               <li><span> Web Development </span><br> Developing websites</li>  
             </ul>
           </div>
-          <div class="tab-contents">
+          <div class="tab-contents active-tab" id="experience">
             <ul>
-              <li><span> UI/UX </span><br> Designing Web/App interfaces</li>
-              <li><span> Web Development </span><br> Developing websites</li>  
-            </ul>
-          </div>
-          <div class="tab-contents">
-            <ul>
-              <li><span> UI/UX </span><br> Designing Web/App interfaces</li>
-              <li><span> Web Development </span><br> Developing websites</li>  
+              <li><span>Sign Language Detector using Raspberry Pi. </span><br> Project work during the coding training, using python and raspberry pi.</li>
+              <li><span> Web Development </span><br> Build website for client (ilash.fi) using wordpress and elementor pro.
             </ul>
           </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+
+
+  function opentab(tabname){
+    for(tablink of tablinks){
+      tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+
+  }
+</script>
 
 </body>
 </html>
